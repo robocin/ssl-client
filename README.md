@@ -31,7 +31,7 @@ protoc --version
 
 1. Extract the downloaded file and go to `/protobuf-2.5.0/src/` *(example version)*
 
-1. Copy the google folder and paste it into `/ssl-client/include/`
+1. Copy the google folder and paste it into `/ssl-client/ssl-Client/include/`
 
 1. Go to folder `/ssl-client/ssl-Client/pb/proto/` and run
 ```sh
