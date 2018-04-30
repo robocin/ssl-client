@@ -54,6 +54,5 @@ sh compile.sh
 go to class x and paste the ip and the port of vision on the line y 
 go to the class z and paste the ip and the command port on the line w
 
-##Author
- [Renato Sousa](https://github.com/renatoosousa) 
+###### Author: [Renato Sousa](https://github.com/renatoosousa) 
 
