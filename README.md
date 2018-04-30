@@ -56,5 +56,5 @@ sh compile.sh
 1. Go to `/ssl-client/ssl-Client/net/myudp.cpp` and paste the Vision Multicast adress and the Command listen port on `this->_addr.setAddress()`and `this->_port = quint16()`, respectively. 
 ![](prints/myudpCPP.png)
 
-###### Author: [Renato Sousa](https://github.com/renatoosousa) 
+#### Author: [Renato Sousa](https://github.com/renatoosousa) 
 
