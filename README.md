@@ -15,11 +15,11 @@ Almost every material present here can be found at:
 
 Feel free to ask and contribute too :)
 
-##Dependencies
+## Dependencies
 - Qt Creator (remember to go in project and disable "shadow build")
 - [protobuf](https://github.com/google/protobuf)
 
-##First Steps
+## First Steps
 1. If you have protobuf installed, check which version you use with the command
 ```sh
 protoc --version
@@ -50,9 +50,11 @@ sh compile.sh
 1. Get the Vision Multicast adress, Vision Multicast port and Command listen port on grSim
 ![](prints/ips.png)
 
-1. In the project,
-go to class x and paste the ip and the port of vision on the line y 
-go to the class z and paste the ip and the command port on the line w
+1. Go to `/ssl-client/ssl-Client/net/robocup_ssl_client.h` and paste the Vision Multicast adress and the Vision Multicast port on `string net_ref_address `and `int port`, respectively.
+![](prints/clientH.png)
+
+1. Go to `/ssl-client/ssl-Client/net/myudp.cpp` and paste the Vision Multicast adress and the Command listen port on `this->_addr.setAddress()`and `this->_port = quint16()`, respectively. 
+![](prints/myudpCPP.png)
 
 ###### Author: [Renato Sousa](https://github.com/renatoosousa) 
 

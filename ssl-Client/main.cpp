@@ -34,7 +34,6 @@ int main(int argc, char *argv[]){
     (void)argv;
     RoboCupSSLClient client;
     client.open(true);
-    printf("client opened");
     SSL_WrapperPacket packet;
 
     MyUDP udp;
