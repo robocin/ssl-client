@@ -33,7 +33,7 @@ protoc --version
 
 1. Copy the google folder and paste it into `/ssl-client/include/`
 
-1. Go to folder `/ssl-client/pb/` and run
+1. Go to folder `/ssl-client/ssl-Client/pb/proto/` and run
 ```sh
 sh compile.sh
 ```
@@ -41,14 +41,14 @@ sh compile.sh
 *Obs: when building the program, if something referring to `google/protobuf/stubs/common.h` has any errors, it will probably be a version incompetbility problem with protobuf (`include/google`)*
 
 ## Usage example
-1. open the grsim
-1. turn off all robots
-1. put them all out of bounds
-1. get one of the blue team robots, put it inside the field and turn on
-[image1]
+1. Open the grSim
+1. Turn off all robots
+1. Put them all out of bounds
+1. Get one of the blue team robots, put it inside the field and turn on
+![](prints/exampleSimulation.png)
 
-1. get the ip and the vision and command ports
-[image2]
+1. Get the Vision Multicast adress, Vision Multicast port and Command listen port on grSim
+![](prints/ips.png)
 
 1. In the project,
 go to class x and paste the ip and the port of vision on the line y 
