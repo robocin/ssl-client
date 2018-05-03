@@ -2,7 +2,7 @@
 #include <QtNetwork>
 #include <stdio.h>
 #include "net/robocup_ssl_client.h"
-#include "net/myudp.h"
+#include "net/grSim_client.h"
 #include "util/timer.h"
 
 #include "pb/messages_robocup_ssl_detection.pb.h"
@@ -36,7 +36,7 @@ int main(int argc, char *argv[]){
     client.open(true);
     SSL_WrapperPacket packet;
 
-    MyUDP udp;
+    GrSim_Client grSim_client;
 
     while(true) {
         if (client.receive(packet)) {
@@ -76,9 +76,9 @@ int main(int argc, char *argv[]){
                     printf("-Robot(B) (%2d/%2d): ",i+1, robots_blue_n);
                     printRobotInfo(robot);
                     if(robot.x() <= 0){
-                        udp.sendCommand(1.0, i);
+                        grSim_client.sendCommand(1.0, i);
                     }else{
-                        udp.sendCommand(-1.0, i);
+                        grSim_client.sendCommand(-1.0, i);
                     }
                 }
 

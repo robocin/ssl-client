@@ -1,25 +1,23 @@
-// myudp.cpp
-
-#include "net/myudp.h"
+#include "net/grSim_client.h"
 #include "pb/grSim_Packet.pb.h"
 #include "pb/grSim_Commands.pb.h"
 #include "pb/grSim_Replacement.pb.h"
 
 
-MyUDP::MyUDP(QObject *parent) :
+GrSim_Client::GrSim_Client(QObject *parent) :
     QObject(parent)
 {
     // create a QUDP socket
     socket = new QUdpSocket(this);
 
-    this->_addr.setAddress("192.168.25.206");
+    this->_addr.setAddress("224.5.23.2");
     this->_port = quint16(20011);
 
     socket->bind(this->_addr, this->_port);
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
 
-void MyUDP::sendCommand(double velX, int id){
+void GrSim_Client::sendCommand(double velX, int id){
     double zero = 0.0;
     grSim_Packet packet;
     bool yellow = false;
@@ -49,7 +47,7 @@ void MyUDP::sendCommand(double velX, int id){
     }
 }
 
-void MyUDP::readyRead(){
+void GrSim_Client::readyRead(){
     // when data comes in
     QByteArray buffer;
     buffer.resize(socket->pendingDatagramSize());

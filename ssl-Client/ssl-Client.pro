@@ -16,7 +16,7 @@ SOURCES += main.cpp \
     pb/grSim_Replacement.pb.cc \
     net/robocup_ssl_client.cpp \
     net/netraw.cpp \
-    net/myudp.cpp
+    net/grSim_client.cpp
 
 HEADERS += pb/messages_robocup_ssl_wrapper.pb.h \
     pb/messages_robocup_ssl_detection.pb.h \
@@ -28,7 +28,7 @@ HEADERS += pb/messages_robocup_ssl_wrapper.pb.h \
     net/netraw.h \
     util/timer.h \
     util/util.h \
-    net/myudp.h
+    net/grSim_client.h
 
 INCLUDEPATH += include
 LIBS += -Llibs/ -lprotobuf\

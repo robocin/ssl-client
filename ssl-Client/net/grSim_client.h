@@ -1,16 +1,14 @@
-// myudp.h
-
-#ifndef MYUDP_H
-#define MYUDP_H
+#ifndef GRSIMCLIENT_H
+#define GRSIMCLIENT_H
 
 #include <QObject>
 #include <QUdpSocket>
 
-class MyUDP : public QObject
+class GrSim_Client : public QObject
 {
     Q_OBJECT
 public:
-    explicit MyUDP(QObject *parent = 0);
+    explicit GrSim_Client(QObject *parent = 0);
     void sendCommand(double velX, int id);
     QHostAddress _addr;
     quint16 _port;
@@ -25,4 +23,4 @@ private:
 
 };
 
-#endif // MYUDP_H
+#endif // GRSIMCLIENT_H
