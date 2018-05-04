@@ -31,5 +31,5 @@ HEADERS += pb/messages_robocup_ssl_wrapper.pb.h \
     net/grSim_client.h
 
 INCLUDEPATH += include
-LIBS += -Llibs/ -lprotobuf\
--lpthread
+LIBS += -lpthread \
+    -L/usr/local/lib -lprotobuf -lz

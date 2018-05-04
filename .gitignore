@@ -1,0 +1,50 @@
+# Created by https://www.gitignore.io/api/c++
+
+### C++ ###
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Protobuffer lib files
+*.pb.*
+
+# Executables
+*.exe
+*.out
+*.app
+
+# End of https://www.gitignore.io/api/c++
+.DS_Store
+.qmake.stash
+Makefile
+ssl-coach
+ssl-coach.pro.user
+build-*
+moc*
+
+*~
+ssl-Client/include/google/protobuf/
