@@ -23,7 +23,7 @@ Feel free to ask and contribute too :)
 - Qt Creator (remember to go in project and disable "shadow build")
 - [protobuf](https://github.com/google/protobuf)
 
-*Tested with: Qt 5.8.0, protoc 2.5.0, protoc 2.6.1, Ubuntu 14.04.5 LTS.*
+*Tested with: Qt 5.8.0, protoc 2.5.0, protoc 2.6.1, protoc 3.x, Ubuntu 14.04.5 LTS.*
 
 ## First Steps
 1. If you have protobuf installed, check which version you use with the command:
