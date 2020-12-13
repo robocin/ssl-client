@@ -11,6 +11,9 @@ if (isEmpty(PROTOBUF_HEADERS) | isEmpty(PROTOBUF_SOURCES)) {
   protobuf_decl.output = ${QMAKE_FILE_BASE}.pb.h
   protobuf_decl.commands = protoc --cpp_out=$$PWD/pb --proto_path=${QMAKE_FILE_IN_PATH} ${QMAKE_FILE_NAME}
   protobuf_decl.variable_out = PROTOBUF_HEADERS
+  protobuf_decl.CONFIG += target_predeps
+  protobuf_decl.dependency_type = TYPE_C
+
   QMAKE_EXTRA_COMPILERS += protobuf_decl
 
   protobuf_impl.name = protobuf sources
@@ -19,6 +22,9 @@ if (isEmpty(PROTOBUF_HEADERS) | isEmpty(PROTOBUF_SOURCES)) {
   protobuf_impl.depends = ${QMAKE_FILE_BASE}.pb.h
   protobuf_impl.commands = $$escape_expand(\n)
   protobuf_impl.variable_out = PROTOBUF_SOURCES
+  protobuf_impl.CONFIG += target_predeps
+  protobuf_impl.dependency_type = TYPE_C
+
   QMAKE_EXTRA_COMPILERS += protobuf_impl
 }
 
