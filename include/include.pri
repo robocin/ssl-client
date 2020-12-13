@@ -9,8 +9,8 @@ HEADERS += $$PWD/ssl-client/ssl-client.h \
   $$PWD/ssl-client/net/referee_ssl_client/referee_ssl_client.h \
   $$PWD/ssl-client/net/robocup_ssl_client/robocup_ssl_client.h \
   $$PWD/ssl-client/net/robocup_ssl_server/robocup_ssl_server.h \
-  $$PWD/ssl-client/utils/utils/timer.h \
-  $$PWD/ssl-client/utils/utils/util.h \
+  $$PWD/ssl-client/utils/timer/timer.h \
+  $$PWD/ssl-client/utils/util/util.h \
   $$PWD/ssl-client/utils/utils.h
 
 SOURCES += \
