@@ -19,21 +19,17 @@
 */
 //========================================================================
 #include "robocup_ssl_server.h"
-#include "timer.h"
+#include "ssl-client/utils/utils.h"
 
 RoboCupSSLServer::RoboCupSSLServer(int port,
-                     string net_address,
-                     string net_interface)
-{
-  _port=port;
-  _net_address=net_address;
-  _net_interface=net_interface;
-
+                                   std::string net_address,
+                                   std::string net_interface) {
+  _port = port;
+  _net_address = net_address;
+  _net_interface = net_interface;
 }
 
-
-RoboCupSSLServer::~RoboCupSSLServer()
-{
+RoboCupSSLServer::~RoboCupSSLServer() {
 }
 
 void RoboCupSSLServer::close() {
@@ -42,31 +38,31 @@ void RoboCupSSLServer::close() {
 
 bool RoboCupSSLServer::open() {
   close();
-  if(!mc.open(0,true,true)) {
-    fprintf(stderr,"Unable to open UDP network\n");
+  if (!mc.open(0, true, true)) {
+    fprintf(stderr, "Unable to open UDP network\n");
     fflush(stderr);
-    return(false);
+    return (false);
   }
 
-  Net::Address multiaddr,interface;
-  multiaddr.setHost(_net_address.c_str(),_port);
-  if(_net_interface.length() > 0){
-    interface.setHost(_net_interface.c_str(),_port);
-  }else{
+  Net::Address multiaddr, interface;
+  multiaddr.setHost(_net_address.c_str(), _port);
+  if (_net_interface.length() > 0) {
+    interface.setHost(_net_interface.c_str(), _port);
+  } else {
     interface.setAny();
   }
 
-  if(!mc.addMulticast(multiaddr,interface)) {
-    fprintf(stderr,"Unable to setup UDP multicast\n");
+  if (!mc.addMulticast(multiaddr, interface)) {
+    fprintf(stderr, "Unable to setup UDP multicast\n");
     fflush(stderr);
-    return(false);
+    return (false);
   }
-  return(true);
+  return (true);
 }
 
-bool RoboCupSSLServer::send(const SSL_DetectionFrame & frame) {
+bool RoboCupSSLServer::send(const SSL_DetectionFrame& frame) {
   SSL_WrapperPacket pkt;
-  SSL_DetectionFrame * nframe = pkt.mutable_detection();
+  SSL_DetectionFrame* nframe = pkt.mutable_detection();
   nframe->CopyFrom(frame);
   mutex.lock();
   nframe->set_t_sent(GetTimeSec());
@@ -75,9 +71,9 @@ bool RoboCupSSLServer::send(const SSL_DetectionFrame & frame) {
   return ret;
 }
 
-bool RoboCupSSLServer::send(const SSL_GeometryData & geometry) {
+bool RoboCupSSLServer::send(const SSL_GeometryData& geometry) {
   SSL_WrapperPacket pkt;
-  SSL_GeometryData * gdata = pkt.mutable_geometry();
+  SSL_GeometryData* gdata = pkt.mutable_geometry();
   gdata->CopyFrom(geometry);
   mutex.lock();
   bool ret = sendWrapperPacket<SSL_WrapperPacket>(pkt);
@@ -87,11 +83,12 @@ bool RoboCupSSLServer::send(const SSL_GeometryData & geometry) {
 
 bool RoboCupSSLServer::sendLegacyMessage(const SSL_DetectionFrame& frame) {
   RoboCup2014Legacy::Wrapper::SSL_WrapperPacket pkt;
-  SSL_DetectionFrame * nframe = pkt.mutable_detection();
+  SSL_DetectionFrame* nframe = pkt.mutable_detection();
   nframe->CopyFrom(frame);
   mutex.lock();
   nframe->set_t_sent(GetTimeSec());
-  bool ret = sendWrapperPacket<RoboCup2014Legacy::Wrapper::SSL_WrapperPacket>(pkt);
+  bool ret =
+      sendWrapperPacket<RoboCup2014Legacy::Wrapper::SSL_WrapperPacket>(pkt);
   mutex.unlock();
   return ret;
 }
@@ -99,10 +96,11 @@ bool RoboCupSSLServer::sendLegacyMessage(const SSL_DetectionFrame& frame) {
 bool RoboCupSSLServer::sendLegacyMessage(
     const RoboCup2014Legacy::Geometry::SSL_GeometryData& geometry) {
   RoboCup2014Legacy::Wrapper::SSL_WrapperPacket pkt;
-  RoboCup2014Legacy::Geometry::SSL_GeometryData * gdata = pkt.mutable_geometry();
+  RoboCup2014Legacy::Geometry::SSL_GeometryData* gdata = pkt.mutable_geometry();
   gdata->CopyFrom(geometry);
   mutex.lock();
-  bool ret = sendWrapperPacket<RoboCup2014Legacy::Wrapper::SSL_WrapperPacket>(pkt);
+  bool ret =
+      sendWrapperPacket<RoboCup2014Legacy::Wrapper::SSL_WrapperPacket>(pkt);
   mutex.unlock();
   return ret;
 }
