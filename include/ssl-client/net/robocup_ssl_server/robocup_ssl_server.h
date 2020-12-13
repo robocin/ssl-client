@@ -21,10 +21,11 @@
 #ifndef ROBOCUP_SSL_SERVER_H
 #define ROBOCUP_SSL_SERVER_H
 
-#include "ssl-client/net/netraw/netraw.h"
-#include "ssl-client/protobuf/protobuf.h"
 #include <string>
 #include <QMutex>
+#include "ssl-client/net/netraw/netraw.h"
+#include "ssl-client/protobuf/protobuf.h"
+
 /**
         @author Stefan Zickler
 */

@@ -19,6 +19,7 @@
 */
 //========================================================================
 #include "robocup_ssl_client.h"
+#include <cstdio>
 
 RoboCupSSLClient::RoboCupSSLClient(int port,
                                    std::string net_address,
@@ -27,6 +28,14 @@ RoboCupSSLClient::RoboCupSSLClient(int port,
   _net_address = net_address;
   _net_interface = net_interface;
   in_buffer = new char[65536];
+
+  //  std::cout << std::endl;
+  //  std::cout << "SSL Client Ip: " << getIpAdress() << std::endl;
+  //  std::cout << "SSL Client Port: " << getPort() << std::endl;
+  //  setPort(1202);
+  //  setIpAdress("224.5.23.1");
+  //  std::cout << "SSL Client Ip: " << getIpAdress() << std::endl;
+  //  std::cout << "SSL Client Port: " << getPort() << std::endl;
 }
 
 RoboCupSSLClient::~RoboCupSSLClient() {
@@ -72,4 +81,36 @@ bool RoboCupSSLClient::receive(SSL_WrapperPacket& packet) {
     return packet.ParseFromArray(in_buffer, r);
   }
   return false;
+}
+
+bool RoboCupSSLClient::receive(TrackerWrapperPacket& packet) {
+  Net::Address src;
+  int r = 0;
+  r = mc.recv(in_buffer, MaxDataGramSize, src);
+  if (r > 0) {
+    fflush(stdout);
+    // decode packet:
+    return packet.ParseFromArray(in_buffer, r);
+  }
+  return false;
+}
+
+int RoboCupSSLClient::getPort() {
+  return _port;
+}
+
+void RoboCupSSLClient::setPort(int port) {
+  this->close();
+  this->_port = port;
+  this->open(false);
+}
+
+std::string RoboCupSSLClient::getIpAddress() {
+  return _net_address;
+}
+
+void RoboCupSSLClient::setIpAddress(std::string net_address) {
+  this->close();
+  this->_net_address = net_address;
+  this->open(false);
 }

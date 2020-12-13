@@ -20,9 +20,11 @@
 //========================================================================
 #ifndef ROBOCUP_SSL_CLIENT_H
 #define ROBOCUP_SSL_CLIENT_H
+
+#include <string>
 #include "ssl-client/net/netraw/netraw.h"
 #include "ssl-client/protobuf/protobuf.h"
-#include <string>
+
 /**
         @author Author Name
 */
@@ -37,7 +39,7 @@ class RoboCupSSLClient {
   std::string _net_interface;
 
  public:
-  RoboCupSSLClient(int port = 10020,
+  RoboCupSSLClient(int port = 10006,
                    std::string net_ref_address = "224.5.23.2",
                    std::string net_ref_interface = "");
 
@@ -45,6 +47,11 @@ class RoboCupSSLClient {
   bool open(bool blocking = false);
   void close();
   bool receive(SSL_WrapperPacket& packet);
+  bool receive(TrackerWrapperPacket& packet);
+  int getPort();
+  void setPort(int port);
+  std::string getIpAddress();
+  void setIpAddress(std::string net_address);
 };
 
 #endif
