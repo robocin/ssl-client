@@ -3,4 +3,6 @@ TEMPLATE = subdirs
 SUBDIRS +=         \
   src
 
-src.subir                = $$PWD/src
+src.subdir                = $$PWD/src
+
+DISTFILES += $$PWD/README.md
