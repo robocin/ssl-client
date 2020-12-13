@@ -3,8 +3,8 @@ INCLUDEPATH += $$PWD
 LIBS += -lpthread -L/usr/local/lib -lprotobuf -lz
 
 HEADERS += $$PWD/ssl-client/ssl-client.h \
+  $$PWD/ssl-client/net/grSim_client_example/grSim_client_example.h \
   $$PWD/ssl-client/net/net.h \
-  $$PWD/ssl-client/net/grSim_client/grSim_client.h \
   $$PWD/ssl-client/net/netraw/netraw.h \
   $$PWD/ssl-client/net/referee_ssl_client/referee_ssl_client.h \
   $$PWD/ssl-client/net/robocup_ssl_client/robocup_ssl_client.h \
@@ -15,7 +15,7 @@ HEADERS += $$PWD/ssl-client/ssl-client.h \
   $$PWD/ssl-client/utils/utils.h
 
 SOURCES += \
-  $$PWD/ssl-client/net/grSim_client/grSim_client.cpp \
+  $$PWD/ssl-client/net/grSim_client_example/grSim_client_example.cpp \
   $$PWD/ssl-client/net/netraw/netraw.cpp \
   $$PWD/ssl-client/net/referee_ssl_client/referee_ssl_client.cpp \
   $$PWD/ssl-client/net/robocup_ssl_client/robocup_ssl_client.cpp \

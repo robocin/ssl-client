@@ -1,7 +1,7 @@
-#include "grSim_client.h"
+#include "grSim_client_example.h"
 #include "ssl-client/protobuf/protobuf.h"
 
-GrSim_Client::GrSim_Client(QObject* parent) : QObject(parent) {
+GrSim_Client_Example::GrSim_Client_Example(QObject* parent) : QObject(parent) {
   // create a QUDP socket
   socket = new QUdpSocket(this);
 
@@ -12,7 +12,12 @@ GrSim_Client::GrSim_Client(QObject* parent) : QObject(parent) {
   connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
 
-void GrSim_Client::sendCommand(double velX, int id) {
+void GrSim_Client_Example::setPortAndAddress(int port, const QString& address) {
+  this->_port = quint16(port);
+  this->_addr.setAddress(address);
+}
+
+void GrSim_Client_Example::sendCommand(double velX, int id) {
   double zero = 0.0;
   grSim_Packet packet;
   bool yellow = false;
@@ -39,11 +44,11 @@ void GrSim_Client::sendCommand(double velX, int id) {
   dgram.resize(packet.ByteSize());
   packet.SerializeToArray(dgram.data(), dgram.size());
   if (socket->writeDatagram(dgram, this->_addr, this->_port) > -1) {
-    printf("send data\n");
+    qDebug("send data");
   }
 }
 
-void GrSim_Client::readyRead() {
+void GrSim_Client_Example::readyRead() {
   // when data comes in
   QByteArray buffer;
   buffer.resize(socket->pendingDatagramSize());
