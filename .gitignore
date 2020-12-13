@@ -80,6 +80,6 @@ target_wrapper.*
 /bin
 
 # Protobuf auto generated files
-/include/ssl-client/protobuf/pb/*
-!/include/ssl-client/protobuf/pb/proto/
+/include/ssl-client/protobuf-files/pb/*
+!/include/ssl-client/protobuf-files/pb/proto
 
