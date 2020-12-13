@@ -20,35 +20,31 @@
 //========================================================================
 #ifndef ROBOCUP_SSL_CLIENT_H
 #define ROBOCUP_SSL_CLIENT_H
-#include "net/netraw.h"
+#include "ssl-client/net/netraw/netraw.h"
+#include "ssl-client/protobuf/protobuf.h"
 #include <string>
-#include "pb/messages_robocup_ssl_detection.pb.h"
-#include "pb/messages_robocup_ssl_geometry.pb.h"
-#include "pb/messages_robocup_ssl_wrapper.pb.h"
-#include "pb/messages_robocup_ssl_refbox_log.pb.h"
-using namespace std;
 /**
-	@author Author Name
+        @author Author Name
 */
 
-class RoboCupSSLClient{
-protected:
+class RoboCupSSLClient {
+ protected:
   static const int MaxDataGramSize = 65536;
-  char * in_buffer;
+  char* in_buffer;
   Net::UDP mc; // multicast client
   int _port;
-  string _net_address;
-  string _net_interface;
-public:
-    RoboCupSSLClient(int port = 10020,
-                     string net_ref_address="224.5.23.2",
-                     string net_ref_interface="");
+  std::string _net_address;
+  std::string _net_interface;
 
-    ~RoboCupSSLClient();
-    bool open(bool blocking=false);
-    void close();
-    bool receive(SSL_WrapperPacket & packet);
+ public:
+  RoboCupSSLClient(int port = 10020,
+                   std::string net_ref_address = "224.5.23.2",
+                   std::string net_ref_interface = "");
 
+  ~RoboCupSSLClient();
+  bool open(bool blocking = false);
+  void close();
+  bool receive(SSL_WrapperPacket& packet);
 };
 
 #endif
