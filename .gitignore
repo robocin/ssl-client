@@ -1,50 +1,83 @@
-# Created by https://www.gitignore.io/api/c++
-
-### C++ ###
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Protobuffer lib files
-*.pb.*
-
-# Executables
-*.exe
-*.out
-*.app
-
-# End of https://www.gitignore.io/api/c++
-.DS_Store
-.qmake.stash
-Makefile
-ssl-coach
-ssl-coach.pro.user
-build-*
-moc*
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
 
 *~
-ssl-Client/include/google/protobuf/
+*.autosave
+*.a
+*.core
+*.moc
+*.o
+*.obj
+*.orig
+*.rej
+*.so
+*.so.*
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+.directory
+*.debug
+Makefile*
+*.prl
+*.app
+moc_*.h
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+*.res
+*.rc
+/.qmake.cache
+/.qmake.stash
+
+# qtcreator generated files
+*.pro.user*
+
+# xemacs temporary files
+*.flc
+
+# Vim temporary files
+.*.swp
+
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.pdb
+*.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj
+*vcxproj.*
+
+# MinGW generated files
+*.Debug
+*.Release
+
+# Python byte code
+*.pyc
+
+# Binaries
+# --------
+*.dll
+*.exe
+
+# qtcreator unit tests
+target_wrapper.*
+
+# Binaries
+# --------
+/bin
+
+# Protobuf auto generated files
+/include/ssl-client/protobuf/pb/*
