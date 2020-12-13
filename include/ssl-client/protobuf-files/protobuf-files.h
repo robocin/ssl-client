@@ -1,5 +1,5 @@
-#ifndef PROTOBUF_H
-#define PROTOBUF_H
+#ifndef PROTOBUFFILES_H
+#define PROTOBUFFILES_H
 
 #if __has_include("pb/game_event.pb.h")
   #include "pb/game_event.pb.h"
@@ -91,4 +91,4 @@
   #warning "pb/savestate.pb.h" was not found.
 #endif
 
-#endif // PROTOBUF_H
+#endif // PROTOBUFFILES_H

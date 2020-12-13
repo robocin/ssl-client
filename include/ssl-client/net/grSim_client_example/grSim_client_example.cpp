@@ -1,5 +1,5 @@
 #include "grSim_client_example.h"
-#include "ssl-client/protobuf/protobuf.h"
+#include "ssl-client/protobuf-files/protobuf-files.h"
 
 GrSim_Client_Example::GrSim_Client_Example(QObject* parent) : QObject(parent) {
   // create a QUDP socket

@@ -23,7 +23,7 @@
 
 #include <string>
 #include "ssl-client/net/netraw/netraw.h"
-#include "ssl-client/protobuf/protobuf.h"
+#include "ssl-client/protobuf-files/protobuf-files.h"
 
 /**
         @author Author Name

@@ -24,7 +24,7 @@
 #include <string>
 #include <QMutex>
 #include "ssl-client/net/netraw/netraw.h"
-#include "ssl-client/protobuf/protobuf.h"
+#include "ssl-client/protobuf-files/protobuf-files.h"
 
 /**
         @author Stefan Zickler
