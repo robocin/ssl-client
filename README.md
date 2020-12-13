@@ -37,8 +37,6 @@ protoc --version
 sh compile.sh
 ```
 
-*Obs: when building the program, if something referring to `google/protobuf/stubs/common.h` has any errors, it will probably be an incompatibility version problem with protobuf (`include/google`)*.
-
 ## Usage example
 1. Open the grSim.
 1. Turn off all robots.
