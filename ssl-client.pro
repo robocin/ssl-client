@@ -1,8 +1,8 @@
 TEMPLATE = subdirs
 
-SUBDIRS +=         \
+SUBDIRS += \
   src
 
-src.subdir                = $$PWD/src
+src.subdir = $$PWD/src
 
 DISTFILES += $$PWD/README.md

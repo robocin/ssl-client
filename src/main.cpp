@@ -32,9 +32,10 @@ int main(int argc, char* argv[]) {
   SSL_WrapperPacket packet;
 
   GrSim_Client_Example grSim_client;
-  grSim_client.setPortAndAddress(10020, "224.5.23.2");
+  grSim_client.setPortAndAddress(20011, "127.0.0.1");
 
   while (true) {
+    // grSim_client.sendCommand(1.0, 0);
     if (client.receive(packet)) {
       qDebug(
           "-----Received Wrapper Packet---------------------------------------------\n");
@@ -146,12 +147,3 @@ int main(int argc, char* argv[]) {
 
   return 0;
 }
-
-/*#include <QCoreApplication>
-
-int main(int argc, char *argv[])
-{
-  QCoreApplication a(argc, argv);
-
-  return a.exec();
-}*/
