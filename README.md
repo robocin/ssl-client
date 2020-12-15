@@ -3,7 +3,7 @@
 > Client base code #ssl #robocup #ssl-vision #grSim 
 
 ## Description
-This repository was created for the purpose of helping beginner teams.
+This repository was created for the purpose of helping beginner teams and include the files in another Qt project.
 This project is capable of:
 - receive field and robot information from ssl-vision
 - receive field and robot information from grSim
