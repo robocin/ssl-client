@@ -1,7 +1,6 @@
-// author  Renato Sousa, 2018
 #include <QDebug>
 #include <QtNetwork>
-#include <ssl-client/ssl-client.h>
+#include "ssl-client/ssl-client.h"
 
 void printRobotInfo(const SSL_DetectionRobot& robot) {
   qDebug("CONF=%4.2f ", robot.confidence());
