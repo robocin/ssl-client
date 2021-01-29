@@ -1,0 +1,3 @@
+# protobuf auto generated files
+pb/*
+!pb/proto
