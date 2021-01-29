@@ -35,11 +35,13 @@ Thumbs.db
 *.rc
 /.qmake.cache
 /.qmake.stash
+*.cbp
 
-# qtcreator generated files
+# QtCreator generated files
+*.pro.user
 *.pro.user*
 
-# xemacs temporary files
+# XEmacs temporary files
 *.flc
 
 # Vim temporary files
@@ -68,18 +70,27 @@ Thumbs.db
 *.pyc
 
 # Binaries
-# --------
 *.dll
 *.exe
 
 # qtcreator unit tests
 target_wrapper.*
 
-# Binaries
-# --------
+# Binaries' folder
 /bin
+/lib
 
-# Protobuf auto generated files
-/include/ssl-client/protobuf-files/pb/*
-!/include/ssl-client/protobuf-files/pb/proto
+# Build
+/build
 
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
