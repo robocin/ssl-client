@@ -19,8 +19,8 @@
 */
 //========================================================================
 
-#ifndef __UTIL_H__
-#define __UTIL_H__
+#ifndef SSL_CLIENT_UTIL_H
+#define SSL_CLIENT_UTIL_H
 
 #include <math.h>
 #include <string.h>

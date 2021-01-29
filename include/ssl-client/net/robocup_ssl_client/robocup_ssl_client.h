@@ -18,8 +18,8 @@
   \author  Stefan Zickler, 2009
 */
 //========================================================================
-#ifndef ROBOCUP_SSL_CLIENT_H
-#define ROBOCUP_SSL_CLIENT_H
+#ifndef SSL_CLIENT_ROBOCUP_SSL_CLIENT_H
+#define SSL_CLIENT_ROBOCUP_SSL_CLIENT_H
 
 #include <string>
 #include "ssl-client/net/netraw/netraw.h"

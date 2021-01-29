@@ -1,5 +1,5 @@
-#ifndef REFEREE_SSL_CLIENT_H
-#define REFEREE_SSL_CLIENT_H
+#ifndef SSL_CLIENT_REFEREE_SSL_CLIENT_H
+#define SSL_CLIENT_REFEREE_SSL_CLIENT_H
 
 #include <string>
 #include "ssl-client/net/netraw/netraw.h"

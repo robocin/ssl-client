@@ -1,5 +1,5 @@
-#ifndef _INCLUDED_NETRAW_H_
-#define _INCLUDED_NETRAW_H_
+#ifndef SSL_CLIENT_INCLUDED_NETRAW_H
+#define SSL_CLIENT_INCLUDED_NETRAW_H
 
 #include <sys/types.h>
 #include <sys/socket.h>

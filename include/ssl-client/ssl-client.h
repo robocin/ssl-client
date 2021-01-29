@@ -1,5 +1,5 @@
-#ifndef SSL_CLIENT_H
-#define SSL_CLIENT_H
+#ifndef SSL_CLIENT_SSL_CLIENT_H
+#define SSL_CLIENT_SSL_CLIENT_H
 
 #include "net/net.h"
 #include "utils/utils.h"

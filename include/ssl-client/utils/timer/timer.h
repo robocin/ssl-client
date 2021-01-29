@@ -21,8 +21,8 @@
 */
 //========================================================================
 
-#ifndef __TIMER_H__
-#define __TIMER_H__
+#ifndef SSL_CLIENT_TIMER_H
+#define SSL_CLIENT_TIMER_H
 
 #include <sys/types.h>
 #include <signal.h>

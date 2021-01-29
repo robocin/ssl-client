@@ -18,8 +18,8 @@
   \author  Stefan Zickler, 2009
 */
 //========================================================================
-#ifndef ROBOCUP_SSL_SERVER_H
-#define ROBOCUP_SSL_SERVER_H
+#ifndef SSL_CLIENT_ROBOCUP_SSL_SERVER_H
+#define SSL_CLIENT_ROBOCUP_SSL_SERVER_H
 
 #include <string>
 #include <QMutex>
