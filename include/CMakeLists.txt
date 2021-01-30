@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-include(../cmake-common/robocin.cmake)
+include(../cmake/utils.cmake)
 
 project(ssl-client LANGUAGES CXX)
 
@@ -22,17 +22,17 @@ function(ROBOCIN_CHECK_PROTOBUFS)
   file(GLOB PROTOBUF_SOURCES ${PROTOBUF_PATH}/*.pb.cc)
   list(APPEND PROTOBUF_GENERATED_FILES ${PROTOBUF_SOURCES})
 
-  if(NOT PROTOBUF_GENERATED_FILES)
+  if (NOT PROTOBUF_GENERATED_FILES)
     set(INPUT_DIRECTORY ${PROTOBUF_PATH}/proto)
     set(OUTPUT_DIRECTORY ${PROTOBUF_PATH})
 
     file(GLOB PROTOBUF_FILES ${INPUT_DIRECTORY}/*.proto)
 
-    foreach(PROTOBUF_FILE ${PROTOBUF_FILES})
+    foreach (PROTOBUF_FILE ${PROTOBUF_FILES})
       get_filename_component(CURRENT_FILE ${PROTOBUF_FILE} NAME)
       execute_process(COMMAND protoc -I=${INPUT_DIRECTORY} --cpp_out=${OUTPUT_DIRECTORY} ${CURRENT_FILE} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-    endforeach()
-  endif()
+    endforeach ()
+  endif ()
 endfunction()
 
 ROBOCIN_CHECK_PROTOBUFS()
