@@ -73,7 +73,7 @@ Thumbs.db
 *.dll
 *.exe
 
-# qtcreator unit tests
+# QtCreator unit tests
 target_wrapper.*
 
 # Binaries' folder
@@ -94,3 +94,5 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+CMakeDoxyfile.in
+CMakeDoxygenDefaults.cmake
