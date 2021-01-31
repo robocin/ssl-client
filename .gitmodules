@@ -2,5 +2,5 @@
 	path = cmake
 	url = https://github.com/robocin/cmake-common.git
 [submodule "scripts/scripts-ubuntu-common"]
-	path = scripts/ubuntu/
+	path = scripts/ubuntu
 	url = https://github.com/robocin/scripts-ubuntu-common.git
