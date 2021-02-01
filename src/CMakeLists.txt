@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 
 include(../cmake/utils.cmake)
 
-project(test-ssl-client LANGUAGES CXX)
+project(exec-ssl-client LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
