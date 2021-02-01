@@ -22,4 +22,4 @@ class GrSim_Client_Example : public QObject {
   QUdpSocket* socket;
 };
 
-#endif // GRSIMCLIENTEXAMPLE_H
+#endif // SSL_CLIENT_GRSIMCLIENTEXAMPLE_H

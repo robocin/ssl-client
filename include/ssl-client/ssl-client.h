@@ -5,4 +5,4 @@
 #include "utils/utils.h"
 #include "protobuf-files/protobuf-files.h"
 
-#endif // SSL_CLIENT_H
+#endif // SSL_CLIENT_SSL_CLIENT_H
