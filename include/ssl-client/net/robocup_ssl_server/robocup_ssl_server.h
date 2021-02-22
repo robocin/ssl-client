@@ -40,9 +40,7 @@ class RoboCupSSLServer {
   std::string _net_interface;
 
  public:
-  RoboCupSSLServer(int port,
-                   std::string net_ref_address,
-                   std::string net_ref_interface = "");
+  RoboCupSSLServer(int port, std::string net_ref_address, std::string net_ref_interface = "");
 
   ~RoboCupSSLServer();
   bool open();
@@ -69,8 +67,7 @@ class RoboCupSSLServer {
 
   bool send(const SSL_DetectionFrame& frame);
   bool send(const SSL_GeometryData& geometry);
-  bool sendLegacyMessage(
-      const RoboCup2014Legacy::Geometry::SSL_GeometryData& geometry);
+  bool sendLegacyMessage(const RoboCup2014Legacy::Geometry::SSL_GeometryData& geometry);
   bool sendLegacyMessage(const SSL_DetectionFrame& frame);
 };
 

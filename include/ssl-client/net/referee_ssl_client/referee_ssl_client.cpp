@@ -1,8 +1,6 @@
 #include "referee_ssl_client.h"
 
-RefereeSSLClient::RefereeSSLClient(int port,
-                                   std::string net_address,
-                                   std::string net_interface) {
+RefereeSSLClient::RefereeSSLClient(int port, std::string net_address, std::string net_interface) {
   _port = port;
   _net_address = net_address;
   _net_interface = net_interface;

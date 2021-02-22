@@ -21,9 +21,7 @@
 #include "robocup_ssl_client.h"
 #include <cstdio>
 
-RoboCupSSLClient::RoboCupSSLClient(int port,
-                                   std::string net_address,
-                                   std::string net_interface) {
+RoboCupSSLClient::RoboCupSSLClient(int port, std::string net_address, std::string net_interface) {
   _port = port;
   _net_address = net_address;
   _net_interface = net_interface;

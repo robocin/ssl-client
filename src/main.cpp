@@ -9,10 +9,7 @@ void printRobotInfo(const SSL_DetectionRobot& robot) {
   } else {
     qDebug("ID=N/A ");
   }
-  qDebug(" HEIGHT=%6.2f POS=<%9.2f,%9.2f> ",
-         robot.height(),
-         robot.x(),
-         robot.y());
+  qDebug(" HEIGHT=%6.2f POS=<%9.2f,%9.2f> ", robot.height(), robot.x(), robot.y());
   if (robot.has_orientation()) {
     qDebug("ANGLE=%6.3f ", robot.orientation());
   } else {
@@ -36,8 +33,7 @@ int main(int argc, char* argv[]) {
   while (true) {
     // grSim_client.sendCommand(1.0, 0);
     if (client.receive(packet)) {
-      qDebug(
-          "-----Received Wrapper Packet---------------------------------------------\n");
+      qDebug("-----Received Wrapper Packet---------------------------------------------\n");
       // see if the packet contains a robot detection frame:
       if (packet.has_detection()) {
         SSL_DetectionFrame detection = packet.detection();
@@ -129,15 +125,11 @@ int main(int argc, char* argv[]) {
           qDebug("  -ty=%.2f\n", calib.ty());
           qDebug("  -tz=%.2f\n", calib.tz());
 
-          if (calib.has_derived_camera_world_tx() &&
-              calib.has_derived_camera_world_ty() &&
+          if (calib.has_derived_camera_world_tx() && calib.has_derived_camera_world_ty() &&
               calib.has_derived_camera_world_tz()) {
-            qDebug("  -derived_camera_world_tx=%.f\n",
-                   calib.derived_camera_world_tx());
-            qDebug("  -derived_camera_world_ty=%.f\n",
-                   calib.derived_camera_world_ty());
-            qDebug("  -derived_camera_world_tz=%.f\n",
-                   calib.derived_camera_world_tz());
+            qDebug("  -derived_camera_world_tx=%.f\n", calib.derived_camera_world_tx());
+            qDebug("  -derived_camera_world_ty=%.f\n", calib.derived_camera_world_ty());
+            qDebug("  -derived_camera_world_tz=%.f\n", calib.derived_camera_world_tz());
           }
         }
       }

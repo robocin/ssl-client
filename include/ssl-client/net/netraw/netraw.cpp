@@ -100,11 +100,7 @@ namespace Net {
 
     if (share_port_for_multicasting) {
       int reuse = 1;
-      if (setsockopt(fd,
-                     SOL_SOCKET,
-                     SO_REUSEADDR,
-                     (const char*) &reuse,
-                     sizeof(reuse)) != 0) {
+      if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, (const char*) &reuse, sizeof(reuse)) != 0) {
         fprintf(stderr, "ERROR WHEN SETTING SO_REUSEADDR ON UDP SOCKET\n");
         fflush(stderr);
       }
@@ -117,11 +113,7 @@ namespace Net {
     if (multicast_include_localhost) {
       int yes = 1;
       // allow packets to be received on this host
-      if (setsockopt(fd,
-                     IPPROTO_IP,
-                     IP_MULTICAST_LOOP,
-                     (const char*) &yes,
-                     sizeof(yes)) != 0) {
+      if (setsockopt(fd, IPPROTO_IP, IP_MULTICAST_LOOP, (const char*) &yes, sizeof(yes)) != 0) {
         fprintf(stderr, "ERROR WHEN SETTING IP_MULTICAST_LOOP ON UDP SOCKET\n");
         fflush(stderr);
       }
@@ -159,13 +151,10 @@ namespace Net {
     imreq.imr_interface.s_addr = interface.getInAddr();
 
     if (debug) {
-      printf("0x%08X 0x%08X\n",
-             (unsigned) interface.getInAddr(),
-             (unsigned) INADDR_ANY);
+      printf("0x%08X 0x%08X\n", (unsigned) interface.getInAddr(), (unsigned) INADDR_ANY);
     }
 
-    int ret =
-        setsockopt(fd, IPPROTO_IP, IP_ADD_MEMBERSHIP, &imreq, sizeof(imreq));
+    int ret = setsockopt(fd, IPPROTO_IP, IP_ADD_MEMBERSHIP, &imreq, sizeof(imreq));
     if (debug)
       printf("ret=%d\n", ret);
     if (ret != 0)

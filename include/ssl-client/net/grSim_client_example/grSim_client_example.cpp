@@ -23,8 +23,7 @@ void GrSim_Client_Example::sendCommand(double velX, int id) {
   bool yellow = false;
   packet.mutable_commands()->set_isteamyellow(yellow);
   packet.mutable_commands()->set_timestamp(0.0);
-  grSim_Robot_Command* command =
-      packet.mutable_commands()->add_robot_commands();
+  grSim_Robot_Command* command = packet.mutable_commands()->add_robot_commands();
   command->set_id(id);
 
   command->set_wheelsspeed(!true);
